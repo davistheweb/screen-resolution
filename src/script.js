@@ -10,3 +10,10 @@ screenRes = () => {
 }
 
 screenRes()
+const closeThis = document.querySelector('.theme')
+
+closem = () => {
+  window.close()
+}
+
+closeThis.addEventListener('click', closem)
