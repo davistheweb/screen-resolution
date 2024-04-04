@@ -1,19 +1,24 @@
-let screenHeight = screen.height
-let screenWidth = screen.width
+let screenHeight = window.screen.height;
+let screenWidth = window.screen.width;
 
-screenRes = () => {
-  const  screenHeightinfo = document.querySelector('.screen-height')
-  const  screenWidthinfo = document.querySelector('.screen-width')
+const screenHeightInfo = document.querySelector('.screen-height');
+const screenWidthInfo = document.querySelector('.screen-width');
 
-  screenHeightinfo.textContent = screenHeight
-  screenWidthinfo.textContent = screenWidth
-}
+const updateScreenRes = () => {
+  screenHeight = window.screen.height;
+  screenWidth = window.screen.width;
+  screenHeightInfo.textContent = screenHeight;
+  screenWidthInfo.textContent = screenWidth;
+  const sizeHeight = document.querySelector('.height-size'
+  ).textContent = "  " +  screenHeight
+  
+  const sizeWidth = document.querySelector('.width-size'
+  ).textContent = "  " +  screenWidth
 
-screenRes()
-const closeThis = document.querySelector('.theme')
+};
 
-closem = () => {
-  window.close()
-}
+// Initial update
+updateScreenRes();
 
-closeThis.addEventListener('click', closem)
+// Update on window resize
+window.addEventListener('resize', updateScreenRes);
